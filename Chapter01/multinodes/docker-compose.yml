@@ -6,6 +6,7 @@ services:
     build: elasticsearch/
     container_name: elasticsearch
     environment:
+      node.name: elasticsearch
       ES_JAVA_OPTS: "-Xmx1024m -Xms1024m"
       discovery.type: "zen"
       discovery.zen.ping.unicast.hosts: "elasticsearch2,elasticsearch3"
@@ -14,6 +15,7 @@ services:
     build: elasticsearch/
     container_name: elasticsearch2
     environment:
+      node.name: elasticsearch2
       ES_JAVA_OPTS: "-Xmx1024m -Xms1024m"
       discovery.type: "zen"
       discovery.zen.ping.unicast.hosts: "elasticsearch,elasticsearch3"
@@ -22,6 +24,7 @@ services:
     build: elasticsearch/
     container_name: elasticsearch3
     environment:
+      node.name: elasticsearch3
       ES_JAVA_OPTS: "-Xmx1024m -Xms1024m"
       discovery.type: "zen"
       discovery.zen.ping.unicast.hosts: "elasticsearch,elasticsearch2"

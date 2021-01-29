@@ -14,7 +14,11 @@ node.master: true
 ## see https://www.elastic.co/guide/en/elasticsearch/reference/current/bootstrap-checks.html
 #
 #discovery.type: single-node
-#cluster.initial_master_nodes: 1
+cluster.initial_master_nodes: 
+          - elasticsearch
+          - elasticsearch2    
+          - elasticsearch3      
+
 ## Disable X-Pack
 ## see https://www.elastic.co/guide/en/x-pack/current/xpack-settings.html
 ##     https://www.elastic.co/guide/en/x-pack/current/installing-xpack.html#xpack-enabling
